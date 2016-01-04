@@ -1,0 +1,22 @@
+{
+  "name": "brane",
+  "version": "1.0.0",
+  "description": "brane",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kindohm/brane.git"
+  },
+  "author": "Mike Hodnick",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kindohm/brane/issues"
+  },
+  "homepage": "https://github.com/kindohm/brane#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
