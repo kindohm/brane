@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title></title>
-	<link href="vendor/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+	<link href="/vendor/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
 	<style>
 		.editor {
 			width: 100%;
@@ -15,14 +15,25 @@
 <div class="container">
 	<div id="editor1" class="editor"></div>
 </div>
-<script src="vendor/ace-editor-builds/src-min/ace.js"></script>
+
+<script src="/vendor/ace-editor-builds/src-min/ace.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+
 <script>
 	(function () {
 		var editor = ace.edit("editor1");
 		editor.setTheme("ace/theme/monokai");
 		editor.getSession().setMode("ace/mode/haskell");
 
+		var socket = io();
 
+
+
+		editor.on('change', function(){
+			var code = editor.getValue();
+			console.log('emitting...', code);
+			socket.emit('thingie', { code: code });
+		});
 
 
 	})();
